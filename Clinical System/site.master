@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="CustomStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+
+    <style>
+        .navbar {
+            font-size: larger
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .modalpanel {
+            border-color: #5078B3;
+            border: 1px dashed #2F4F4F;
+            border-style: solid solid;
+            border-width: 3px;
+            padding: 10px;
+            width: 25%;
+            font-size: 20px;
+            text-align: center;
+            background-color: #c1e2f5;
+        }
+
+        .modelBackground {
+            background-color: black;
+            opacity: 0.5;
+        }
+
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div>
+            <%--     <div class="container">
+            <div class="row">
+                <div class="col-xs-12">--%>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+                <div class="container-fluid">
+                    <div class="dropdown px-5 py-2">
+                        <a class="dropdown-toggle text-light" data-toggle="dropdown">Master </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Dashboard.aspx" class="dropdown-item">Home</a></li>
+                            <li><a href="clinic details.aspx" class="dropdown-item">Clinic Details</a></li>
+                            <li><a href="staff details.aspx" class="dropdown-item">Staff Details</a></li>
+                            <li><a href="patient details.aspx" class="dropdown-item">Patient Details</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown px-5 py-2">
+                        <a class="dropdown-toggle text-light" data-toggle="dropdown">Transaction</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="visit details.aspx" class="dropdown-item">Visit Details</a></li>
+                            <li><a href="#" class="dropdown-item">Appointment Details</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-item">
+                        <a runat="server" id="logoutbtn" class="btn btn-light">Logout <span class="glyphicon glyphicon-log-out"></span></a>
+                    </div>
+                </div>
+
+                <%-- <nav class="">
+                    <a class="btn btn-light" href="Log in.aspx">Logout <span class="glyphicon glyphicon-log-out"></span></a>
+                </nav>--%>
+            </nav>
+        </div>
+        <%--</div>
+            </div>
+        </div>--%>
+        <div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+            <p>
+                &copy All right Reserved.
+            </p>
+        </footer>
+
+        <ajaxToolkit:ModalPopupExtender ID="lgmodal" runat="server" BehaviorID="lgmodal" TargetControlID="logoutbtn" PopupControlID="lgpanel" BackgroundCssClass="modelBackground" CancelControlID="cancel" >
+            <Animations>
+                <OnShown>
+                    <Fadein Duration ="0.2" />
+                </OnShown>
+                <OnHiding>
+                    <Fadeout Duration ="0.2" />
+                </OnHiding>
+            </Animations>
+        </ajaxToolkit:ModalPopupExtender>
+
+        <asp:Panel ID="lgpanel" CssClass="modalpanel" runat="server">
+            <asp:Panel ID="Panel1" CssClass="modal-header" runat="server">
+                <h2>Log Out</h2>
+            </asp:Panel>
+            <asp:Panel ID="Panel2" CssClass="modal-body" HorizontalAlign="Left" runat="server">
+                <h4>Confirm Log out ?</h4>
+            </asp:Panel>
+            <asp:Panel ID="Panel3" CssClass="modal-footer" runat="server">
+                <asp:Button ID="cancel" CssClass="btn btn-success" runat="server" Text="Cancel" />
+                <asp:Button ID="lgout" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="logoutonmd_Click" />
+            </asp:Panel>
+        </asp:Panel>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

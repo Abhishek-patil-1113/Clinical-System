@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Clinical System", "Clinical System\", "{0853279D-3D22-40EC-846D-0D151E94A24E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62576"
+		Debug.AspNetCompiler.PhysicalPath = "Clinical System\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62576\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62576"
+		Release.AspNetCompiler.PhysicalPath = "Clinical System\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62576\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62576"
+		SlnRelativePath = "Clinical System\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0853279D-3D22-40EC-846D-0D151E94A24E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0853279D-3D22-40EC-846D-0D151E94A24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33CD4D8F-9761-4E96-A114-4206016AC48C}
+	EndGlobalSection
+EndGlobal
