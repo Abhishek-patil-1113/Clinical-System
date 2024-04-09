@@ -132,7 +132,7 @@
                 <div class="form-group">
                     <label for="dname" class="control-label col-xs-3 col-lg-4">Doctor Name :</label>
                     <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
-                        <asp:DropDownList ID="dname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="False">
+                        <asp:DropDownList ID="dname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="true">
                             <asp:ListItem Value="">Select</asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ValidationGroup="visitDetailsGroup" runat="server" ControlToValidate="dname" ErrorMessage="Please select the doctor name." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -142,7 +142,7 @@
                 <div class="form-group">
                     <label for="stname" class="control-label col-xs-3 col-lg-4">Staff Name :</label>
                     <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
-                        <asp:DropDownList ID="stname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="False">
+                        <asp:DropDownList ID="stname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="true">
                             <asp:ListItem Value="">Select</asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="visitDetailsGroup" ControlToValidate="stname" ErrorMessage="Please select the staff name." ForeColor="Red"></asp:RequiredFieldValidator>

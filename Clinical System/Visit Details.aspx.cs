@@ -25,38 +25,12 @@ public partial class _Default : System.Web.UI.Page
     DataTable inveTable;
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        string getDoc = "select staff_id, staff_name from staff where staff_work_type = 'Doctor'";
-        SqlCon.Open();
-        cmd = new SqlCommand(getDoc, SqlCon);
-        reader = cmd.ExecuteReader();
-        while (reader.Read())
-        {
-            ListItem l1 = new ListItem();
-            l1.Value = reader[0].ToString();
-            l1.Text = reader[1].ToString();
-            dname.Items.Add(l1);
-        }
-        SqlCon.Close();
-
-        string getStaff = "select staff_id, staff_name from staff";
-        SqlCon.Open();
-        cmd = new SqlCommand(getStaff, SqlCon);
-        reader = cmd.ExecuteReader();
-        while (reader.Read())
-        {
-            ListItem l1 = new ListItem();
-            l1.Value = reader[0].ToString();
-            l1.Text = reader[1].ToString();
-            stname.Items.Add(l1);
-        }
-        SqlCon.Close();
-
         if (!IsPostBack)
         {
             InitializeMedicineTable();
             InitializeInveTable();
-
+            loadDoc();
+            loadStaff();
         }
         else
         {
@@ -70,6 +44,36 @@ public partial class _Default : System.Web.UI.Page
         invegrid.DataBind();
     }
 
+    public void loadStaff()
+    {
+        string getStaff = "select staff_id, staff_name from staff";
+        SqlCon.Open();
+        cmd = new SqlCommand(getStaff, SqlCon);
+        reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            ListItem l1 = new ListItem();
+            l1.Value = reader[0].ToString();
+            l1.Text = reader[1].ToString();
+            stname.Items.Add(l1);
+        }
+        SqlCon.Close();
+    }
+    public void loadDoc()
+    {
+        string getDoc = "select staff_id, staff_name from staff where staff_work_type = 'Doctor'";
+        SqlCon.Open();
+        cmd = new SqlCommand(getDoc, SqlCon);
+        reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            ListItem l1 = new ListItem();
+            l1.Value = reader[0].ToString();
+            l1.Text = reader[1].ToString();
+            dname.Items.Add(l1);
+        }
+        SqlCon.Close();
+    }
     private void InitializeMedicineTable()
     {
         medicineTable = new DataTable();
@@ -199,8 +203,8 @@ public partial class _Default : System.Web.UI.Page
         visitTime = vtime.Value.ToString();
         string visitDate = "";
         visitDate = vdatetxt.Text;
-        int doctorID = Convert.ToInt32(dname.SelectedItem.Value);
-        int staffID = Convert.ToInt32(stname.SelectedItem.Value);
+        int doctorID = Convert.ToInt32(dname.SelectedItem.Value.ToString());
+        int staffID = Convert.ToInt32(stname.SelectedItem.Value.ToString());
         int patientID = Convert.ToInt32(ViewState["pid"]);
         string VSymptoms = "";
         VSymptoms = symptoms.Value.ToString();
@@ -243,6 +247,8 @@ public partial class _Default : System.Web.UI.Page
         oxy.Text = wt.Text = ht.Text = "";
         symptoms.Value = "";
         diagnosis.Value = "";
+        dname.SelectedIndex = 0;
+        stname.SelectedIndex = 0;
 
         rnodrop.Visible = false;
         rno.Visible = true;
