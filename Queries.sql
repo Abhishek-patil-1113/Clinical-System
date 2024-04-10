@@ -53,7 +53,7 @@
 
 --update staff set staff_name = 'updated', staff_addrs = 'updated address', staff_area ='', staff_city = '', staff_pin = 141414, staff_contact = 7070707070, staff_gender = 'Male', staff_aadhar = 606060606060, staff_email = '', staff_dob = '', staff_doj = '', staff_qualification = '', staff_experience = '', staff_work_type = '', password = '' where staff_id = 4
 
-select * from patient
+--select * from patient
 
 --select patient_id, patient_name,patient_city,patient_gender,patient_contact,reg_dt from patient
 

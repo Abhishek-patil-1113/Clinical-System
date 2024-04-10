@@ -19,6 +19,7 @@
 
         .well {
             padding: 5px;
+            padding-right: 20px;
             margin-top: 20px;
             background: #bee5eb;
         }
@@ -53,8 +54,9 @@
         }
 
         .tabPanel {
-            padding: 20px;
-            padding-right: 30px;
+            padding: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
         }
 
         .borderMy {
@@ -62,6 +64,13 @@
             border-color: #005339;
             border-width: 2px;
             padding-top: 10px;
+        }
+
+        .form-group {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
     </style>
 </asp:Content>
@@ -122,128 +131,130 @@
                     <div class="row">
                         <form class="form-horizontal">
 
-                            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-lg-offset-3 ">
-                                <form class="form-horizontal">
-                                    <div class="form-group">
-                                        <label for="name" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Name : </label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="name" CssClass="form-control" runat="server" placeholder="name of patient"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="name" ErrorMessage="Please enter the name." ForeColor="Red"></asp:RequiredFieldValidator>
+                            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-4 col-lg-offset-4">
+                                <div class="well">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="name" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Name : </label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="name" CssClass="form-control" runat="server" placeholder="name of patient"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="name" ErrorMessage="Please enter the name." ForeColor="Red"></asp:RequiredFieldValidator>
 
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="address" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4  ">Address : </label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="address" CssClass="form-control" runat="server" placeholder="address"></asp:TextBox>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="address" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4  ">Address : </label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="address" CssClass="form-control" runat="server" placeholder="address"></asp:TextBox>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="area" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Area : </label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="area" CssClass="form-control" runat="server" placeholder="area"></asp:TextBox>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="area" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Area : </label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="area" CssClass="form-control" runat="server" placeholder="area"></asp:TextBox>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="city" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>City :</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="city" CssClass="form-control" runat="server" placeholder="city"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="city" ErrorMessage="Please enter the city." ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="city" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>City :</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="city" CssClass="form-control" runat="server" placeholder="city"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="city" ErrorMessage="Please enter the city." ForeColor="Red"></asp:RequiredFieldValidator>
 
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="pin" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Pin :</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="pin" CssClass="form-control" runat="server" placeholder="pin"></asp:TextBox>
-                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationGroup="PatientDetailsValidation" runat="server" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="pin" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Pin :</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="pin" CssClass="form-control" runat="server" placeholder="pin"></asp:TextBox>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationGroup="PatientDetailsValidation" runat="server" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="gender" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Gender:</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding-top: 0;">
-                                            <asp:RadioButtonList ID="gender" runat="server" RepeatLayout="Flow" CssClass="rbl" CellPadding="1" CellSpacing="1" RepeatDirection="Horizontal">
-                                                <asp:ListItem Value="Male">Male</asp:ListItem>
-                                                <asp:ListItem Value="Female">Female</asp:ListItem>
-                                            </asp:RadioButtonList>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="gender" ErrorMessage="Please select the gender." ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="gender" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Gender:</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; margin-top:5px; padding-top: 0;">
+                                                <asp:RadioButtonList ID="gender" runat="server" RepeatLayout="Flow" CssClass="rbl" CellPadding="1" CellSpacing="1" RepeatDirection="Horizontal">
+                                                    <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                    <asp:ListItem Value="Female">Female</asp:ListItem>
+                                                </asp:RadioButtonList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="gender" ErrorMessage="Please select the gender." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="dob" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Date of Birth :</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="dob" CssClass="form-control" placeholder="select date of birth" runat="server"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="dob" runat="server" BehaviorID="_content_CalendarExtender1" />
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="dob" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Date of Birth :</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="dob" CssClass="form-control" placeholder="select date of birth" runat="server"></asp:TextBox>
+                                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="dob" runat="server" BehaviorID="_content_CalendarExtender1" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="contact" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Contact :</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="contact" CssClass="form-control" placeholder="Contact" runat="server"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" ValidationGroup="PatientDetailsValidation" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="contact" ValidationGroup="PatientDetailsValidation" ErrorMessage="Invalid Mobile." ValidationExpression="^[0-9]{10}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="contact" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Contact :</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="contact" CssClass="form-control" placeholder="Contact" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" ValidationGroup="PatientDetailsValidation" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="contact" ValidationGroup="PatientDetailsValidation" ErrorMessage="Invalid Mobile." ValidationExpression="^[0-9]{10}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="email" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Email :</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="email" CssClass="form-control" runat="server" placeholder="email"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="email" ErrorMessage="Please enter the email." ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="RE2" runat="server" ControlToValidate="email" ValidationGroup="PatientDetailsValidation" ErrorMessage="Invalid Email." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="email" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Email :</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="email" CssClass="form-control" runat="server" placeholder="email"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="email" ErrorMessage="Please enter the email." ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RE2" runat="server" ControlToValidate="email" ValidationGroup="PatientDetailsValidation" ErrorMessage="Invalid Email." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="reference" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Reference from :</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="reference" CssClass="form-control" runat="server" placeholder="reference from"></asp:TextBox>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="reference" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4">Reference from :</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:TextBox ID="reference" CssClass="form-control" runat="server" placeholder="reference from"></asp:TextBox>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="bloodgroup" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Blood Group:</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:DropDownList ID="bloodgroup" CssClass="dropdown" runat="server">
-                                                <asp:ListItem Value="">Select</asp:ListItem>
-                                                <asp:ListItem>A+</asp:ListItem>
-                                                <asp:ListItem>B+</asp:ListItem>
-                                                <asp:ListItem>O+</asp:ListItem>
-                                                <asp:ListItem>AB+</asp:ListItem>
-                                                <asp:ListItem>A-</asp:ListItem>
-                                                <asp:ListItem>B-</asp:ListItem>
-                                                <asp:ListItem>O-</asp:ListItem>
-                                                <asp:ListItem>AB-</asp:ListItem>
-                                            </asp:DropDownList>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="bloodgroup" ErrorMessage="Please select the blood group." ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="bloodgroup" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Blood Group:</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
+                                                <asp:DropDownList ID="bloodgroup" CssClass="dropdown" runat="server">
+                                                    <asp:ListItem Value="">Select</asp:ListItem>
+                                                    <asp:ListItem>A+</asp:ListItem>
+                                                    <asp:ListItem>B+</asp:ListItem>
+                                                    <asp:ListItem>O+</asp:ListItem>
+                                                    <asp:ListItem>AB+</asp:ListItem>
+                                                    <asp:ListItem>A-</asp:ListItem>
+                                                    <asp:ListItem>B-</asp:ListItem>
+                                                    <asp:ListItem>O-</asp:ListItem>
+                                                    <asp:ListItem>AB-</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="bloodgroup" ErrorMessage="Please select the blood group." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="dor" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Registration date:</label>
-                                        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; padding: 0">
-                                            <asp:TextBox ID="dor" CssClass="form-control" placeholder="date of registration" runat="server"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="dor" runat="server" BehaviorID="_content_CalendarExtender2" />
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="dor" ErrorMessage="Please enter the registration date." ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="dor" class="control-label col-xs-4 col-sm-4 col-md-3 col-lg-4"><span class="astr">*</span>Date of registration:</label>
+                                            <div class="col-xs-8 col-sm-8 col-md-9 col-lg-8" style="margin: 0; margin-top:6px; padding: 0">
+                                                <asp:TextBox ID="dor" CssClass="form-control" placeholder="date of registration" runat="server"></asp:TextBox>
+                                                <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="dor" runat="server" BehaviorID="_content_CalendarExtender2" />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="PatientDetailsValidation" ControlToValidate="dor" ErrorMessage="Please enter the registration date." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="row">
-                                        <div class="col-xs-4  col-sm-4 col-md-4 col-lg-3 col-lg-offset-4" style="margin-top: 55px; margin-bottom: 75px; display: inline-block">
-                                            <asp:Button ID="save" runat="server" Text="Save" ValidationGroup="PatientDetailsValidation" class="btn btn-success btn-block" OnClick="save_Click" />
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-xs-4 col-xs-offset-2  col-sm-4 col-md-4 col-lg-3 col-lg-offset-4" style="margin-top: 55px; margin-bottom: 75px; display: inline-block">
+                                                <asp:Button ID="save" runat="server" Text="Save" ValidationGroup="PatientDetailsValidation" class="btn btn-success btn-block" OnClick="save_Click" />
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 " style="margin-top: 55px; display: inline-block">
+                                                <asp:Button ID="clear" class="btn btn-default btn-block" runat="server" Text="Clear" OnClick="clear_Click" />
+                                            </div>
                                         </div>
-                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 " style="margin-top: 55px; display: inline-block">
-                                            <asp:Button ID="clear" class="btn btn-default btn-block" runat="server" Text="Clear" OnClick="clear_Click" />
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -314,16 +325,16 @@
                                                 <hr style="height: 1px; background-color: forestgreen" />
 
                                                 <div class="form-group">
-                                                    <label for="txtAllergy" class="control-label col-xs-3 ">Name : </label>
-                                                    <div class="col-xs-9" style="margin: 0; padding: 0">
+                                                    <label for="txtAllergy" class="control-label col-xs-4 ">Name : </label>
+                                                    <div class="col-xs-8" style="margin: 0; padding: 0">
                                                         <asp:TextBox ID="txtAllergy" CssClass="form-control" placeholder="allergy name" runat="server"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="AllergyValidation" ControlToValidate="txtAllergy" ErrorMessage="Please enter the name." ForeColor="Red"></asp:RequiredFieldValidator>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="allergyStart" class="control-label col-xs-3">Start Date :</label>
-                                                    <div class="col-xs-9" style="margin: 0; padding: 0">
+                                                    <label for="allergyStart" class="control-label col-xs-4">Start Date :</label>
+                                                    <div class="col-xs-8" style="margin: 0; margin-top: 6px; padding: 0">
                                                         <asp:TextBox ID="allergyStart" CssClass="form-control" placeholder="select start date" runat="server"></asp:TextBox>
                                                         <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="allergyStart" BehaviorID="_content_CalendarExtender3" />
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ValidationGroup="AllergyValidation" ControlToValidate="allergyStart" ErrorMessage="Please select the start date." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -331,10 +342,10 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <div class="col-xs-3 col-xs-offset-3 col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3" style="margin-top: 15px; display: inline-block">
+                                                    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1ww col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3" style="margin-top: 15px; display: inline-block">
                                                         <asp:Button ID="btnmediAdd" runat="server" Text="Add" ValidationGroup="AllergyValidation" OnClientClick="scrollToContainer('allergyContainer');" class="btn btn-info btn-block" OnClick="btnmediAdd_Click" />
                                                     </div>
-                                                    <div class="col-xs-3 col-sm-4 col-md-3 col-lg-3 " style="margin-top: 15px; display: inline-block; margin-bottom: 150px">
+                                                    <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3 " style="margin-top: 15px; display: inline-block; margin-bottom: 150px">
                                                         <asp:Button ID="btnmediClear" runat="server" Text="Clear" class="btn btn-default btn-block" OnClick="btnmediClear_Click" />
                                                     </div>
                                                 </div>
@@ -406,16 +417,16 @@
                                                 <hr style="height: 1px; background-color: forestgreen" />
 
                                                 <div class="form-group">
-                                                    <label for="txtcronic" class="control-label col-xs-3 ">Name : </label>
-                                                    <div class="col-xs-9" style="margin: 0; padding: 0">
+                                                    <label for="txtcronic" class="control-label col-xs-4 ">Name : </label>
+                                                    <div class="col-xs-8" style="margin: 0; padding: 0">
                                                         <asp:TextBox ID="txtcronic" CssClass="form-control" placeholder="disease name" runat="server"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ValidationGroup="CronicValidation" ControlToValidate="txtcronic" ErrorMessage="Please enter the cronic disease." ForeColor="Red"></asp:RequiredFieldValidator>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="txtcronicstart" class="control-label col-xs-3">Start Date :</label>
-                                                    <div class="col-xs-9" style="margin: 0; padding: 0">
+                                                    <label for="txtcronicstart" class="control-label col-xs-4">Start Date :</label>
+                                                    <div class="col-xs-8" style="margin: 0; padding: 0">
                                                         <asp:TextBox ID="txtcronicstart" CssClass="form-control" placeholder="select start date" runat="server"></asp:TextBox>
                                                         <ajaxToolkit:CalendarExtender ID="CalendarExtender4" runat="server" TargetControlID="txtcronicstart" />
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ValidationGroup="CronicValidation" ControlToValidate="txtcronicstart" ErrorMessage="Please select the start date." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -423,10 +434,10 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <div class="col-xs-3 col-xs-offset-3 col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3" style="margin-top: 15px; display: inline-block">
+                                                    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3" style="margin-top: 15px; display: inline-block">
                                                         <asp:Button ID="tbncroadd" runat="server" OnClientClick="scrollToElement('TabContainer1');" ValidationGroup="CronicValidation" Text="Add" class="btn btn-info btn-block" OnClick="tbncroadd_Click" />
                                                     </div>
-                                                    <div class="col-xs-3 col-sm-4 col-md-3 col-lg-3 " style="margin-top: 15px; display: inline-block; margin-bottom: 150px">
+                                                    <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3 " style="margin-top: 15px; display: inline-block; margin-bottom: 150px">
                                                         <asp:Button ID="btncroclear" runat="server" Text="Clear" class="btn btn-default btn-block" OnClick="btncroclear_Click" />
                                                     </div>
                                                 </div>
@@ -497,26 +508,26 @@
                                                 <hr style="height: 1px; background-color: forestgreen" />
 
                                                 <div class="form-group">
-                                                    <label for="txtmediname" class="control-label col-xs-3 ">Name : </label>
-                                                    <div class="col-xs-9" style="margin: 0; padding: 0">
+                                                    <label for="txtmediname" class="control-label col-xs-4 ">Name : </label>
+                                                    <div class="col-xs-8" style="margin: 0; padding: 0">
                                                         <asp:TextBox ID="txtmediname" CssClass="form-control" placeholder="medicine name" runat="server"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ValidationGroup="MediHistoryValidation" ControlToValidate="txtmediname" ErrorMessage="Please enter the medicine." ForeColor="Red"></asp:RequiredFieldValidator>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="txtfreq" class="control-label col-xs-3 ">Frequency : </label>
-                                                    <div class="col-xs-9" style="margin: 0; padding: 0">
+                                                    <label for="txtfreq" class="control-label col-xs-4 ">Frequency : </label>
+                                                    <div class="col-xs-8" style="margin: 0; padding: 0">
                                                         <asp:TextBox ID="txtfreq" CssClass="form-control" placeholder="frequency" runat="server"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ValidationGroup="MediHistoryValidation" ControlToValidate="txtfreq" ErrorMessage="Please enter the frequency." ForeColor="Red"></asp:RequiredFieldValidator>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <div class="col-xs-3 col-xs-offset-3 col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3" style="margin-top: 15px; display: inline-block">
+                                                    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3" style="margin-top: 15px; display: inline-block">
                                                         <asp:Button ID="btnmedhistoryadd" OnClientClick="scrollToElement('TabContainer1')" ValidationGroup="MediHistoryValidation" runat="server" Text="Add" class="btn btn-info btn-block" OnClick="btnmedhistoryadd_Click" />
                                                     </div>
-                                                    <div class="col-xs-3 col-sm-4 col-md-3 col-lg-3 " style="margin-top: 15px; display: inline-block; margin-bottom: 150px">
+                                                    <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3 " style="margin-top: 15px; display: inline-block; margin-bottom: 150px">
                                                         <asp:Button ID="btnmedhistoryclear" runat="server" Text="Clear" class="btn btn-default btn-block" OnClick="btnmedhistoryclear_Click" />
                                                     </div>
                                                 </div>

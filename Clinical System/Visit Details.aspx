@@ -46,11 +46,19 @@
             padding-left: 25px;
         }
 
+        .padding {
+            padding: 15px;
+        }
+
         .borderMy {
             border: solid;
             border-color: #005339;
             border-width: 2px;
             padding-top: 10px;
+        }
+
+        .astr {
+            color: red;
         }
     </style>
 </asp:Content>
@@ -60,12 +68,12 @@
         Add visit Details
     </div>
     <hr style="height: 1px; background-color: lightgreen; margin-bottom: 30px;" />
-    <div class="form-horizontal">
+    <div class="form-horizontal padding">
         <div class="row">
             <div class="col-xs-12 col-sm-11 col-md-6 col-lg-4 col-lg-offset-2">
                 <div class="form-group ">
-                    <label for="rno" class="control-label col-xs-3 col-lg-4 ">Registration no : </label>
-                    <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                    <label for="rno" class="control-label col-xs-4 col-lg-4 ">Registration no : </label>
+                    <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:TextBox ID="rno" CssClass="form-control" placeholder="registration number" runat="server" AutoPostBack="True" OnTextChanged="rno_TextChanged"></asp:TextBox>
                         <asp:DropDownList ID="rnodrop" CssClass="dropdown" runat="server" Visible="false" AutoPostBack="True" OnSelectedIndexChanged="rnodrop_SelectedIndexChanged" OnDataBound="rnodrop_DataBound">
                         </asp:DropDownList>
@@ -76,8 +84,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="pname" class="control-label col-xs-3 col-lg-4">Patient Name : </label>
-                    <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                    <label for="pname" class="control-label col-xs-4 col-lg-4"><span class="astr">*</span>Patient Name : </label>
+                    <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:TextBox ID="pname" CssClass="form-control" placeholder="patient name" runat="server" OnDataBinding="pname_DataBinding" OnTextChanged="pname_TextChanged" AutoPostBack="True"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" ValidationGroup="visitDetailsGroup" runat="server" ControlToValidate="pname" ErrorMessage="Please enter the name." ForeColor="Red"></asp:RequiredFieldValidator>
 
@@ -85,15 +93,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="page" class="control-label col-xs-3 col-lg-4">Age : </label>
-                    <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                    <label for="page" class="control-label col-xs-4 col-lg-4">Age : </label>
+                    <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:Label ID="age" runat="server" CssClass="form-control" Text=""></asp:Label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="bloodgroup" class="control-label col-xs-3 col-lg-4">Blood Group : </label>
-                    <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                    <label for="bloodgroup" class="control-label col-xs-4 col-lg-4">Blood Group : </label>
+                    <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:Label ID="bloodgroup" runat="server" CssClass="form-control" Text=""></asp:Label>
                     </div>
                 </div>
@@ -101,8 +109,8 @@
 
             <div class="col-xs-12 col-sm-11 col-md-6 col-lg-4">
                 <div class="form-group">
-                    <label for="vdatetxt" class="control-label col-xs-3 col-lg-4">Visit Date:</label>
-                    <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                    <label for="vdatetxt" class="control-label col-xs-4 col-lg-4"><span class="astr">*</span>Visit Date:</label>
+                    <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:TextBox ID="vdatetxt" CssClass="form-control" placeholder="enter visit date" runat="server"></asp:TextBox>
                         <ajaxToolkit:CalendarExtender ID="vdate" TargetControlID="vdatetxt" runat="server" Enabled="True" />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="visitDetailsGroup" ControlToValidate="vdatetxt" ErrorMessage="Please select the date." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -110,14 +118,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="vtime" class="control-label control-label col-xs-3 col-lg-4 ">Visit Time :</label>
-                    <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
+                    <label for="vtime" class="control-label control-label col-xs-4 col-lg-4 ">Visit Time :</label>
+                    <div class="col-xs-7 col-lg-8" style="margin: 0; margin-top: 6px; padding: 0">
                         <input runat="server" type="time" id="vtime" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="vtype" class="control-label col-xs-3 col-lg-4">Visit Type : </label>
+                    <label for="vtype" class="control-label col-xs-4 col-lg-4"><span class="astr">*</span>Visit Type : </label>
                     <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0;">
                         <asp:DropDownList ID="vtype" CssClass="dropdown" runat="server">
                             <asp:ListItem Value="">Select</asp:ListItem>
@@ -130,7 +138,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="dname" class="control-label col-xs-3 col-lg-4">Doctor Name :</label>
+                    <label for="dname" class="control-label col-xs-4 col-lg-4"><span class="astr">*</span>Doctor Name :</label>
                     <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:DropDownList ID="dname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="true">
                             <asp:ListItem Value="">Select</asp:ListItem>
@@ -140,7 +148,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="stname" class="control-label col-xs-3 col-lg-4">Staff Name :</label>
+                    <label for="stname" class="control-label col-xs-4 col-lg-4"><span class="astr">*</span>Staff Name :</label>
                     <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:DropDownList ID="stname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="true">
                             <asp:ListItem Value="">Select</asp:ListItem>
@@ -163,16 +171,16 @@
         <div class="row">
             <div class="col-xs-12 col-sm-11 col-md-6 col-lg-3 col-lg-offset-3">
                 <div class="form-group ">
-                    <label for="tmp" class="control-label col-xs-3 col-lg-4 ">Temperature : </label>
-                    <div class="col-xs-2 col-lg-3 input-group" style="margin: 0; padding: 0">
+                    <label for="tmp" class="control-label col-xs-4 col-lg-4 ">Temperature : </label>
+                    <div class="col-xs-3 col-lg-3 input-group" style="margin: 0; padding: 0">
                         <asp:TextBox ID="tmp" CssClass="form-control" runat="server"></asp:TextBox>
                         <span class="input-group-addon">&#8451;</span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="bp" class="control-label col-xs-3 col-lg-4">Blood Pressure : </label>
-                    <div class="col-xs-4 col-lg-5 input-group" style="margin: 0; padding: 0">
+                    <label for="bp" class="control-label col-xs-4 col-lg-4">Blood Pressure : </label>
+                    <div class="col-xs-6 col-lg-5 input-group" style="margin: 0; padding: 0">
                         <asp:TextBox ID="bp1" CssClass="form-control" runat="server"></asp:TextBox>
                         <span class="input-group-addon">/</span>
                         <asp:TextBox ID="bp2" CssClass="form-control" runat="server"></asp:TextBox>
@@ -181,8 +189,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="oxy" class="control-label col-xs-3 col-lg-4">Oxygen Level : </label>
-                    <div class="col-xs-3 col-lg-3 input-group" style="margin: 0; padding: 0">
+                    <label for="oxy" class="control-label col-xs-4 col-lg-4">Oxygen Level : </label>
+                    <div class="col-xs-4 col-lg-3 input-group" style="margin: 0; padding: 0">
                         <asp:TextBox ID="oxy" CssClass="form-control" runat="server"></asp:TextBox>
                         <span class="input-group-addon">&percnt; SpO&#8322;</span>
                     </div>
@@ -191,16 +199,16 @@
 
             <div class="col-xs-12 col-sm-11 col-md-6 col-lg-3">
                 <div class="form-group">
-                    <label for="ht" class="control-label col-xs-3 col-lg-4">Height : </label>
-                    <div class="col-xs-4 col-lg-3 input-group" style="margin: 0; padding: 0">
+                    <label for="ht" class="control-label col-xs-4 col-lg-4">Height : </label>
+                    <div class="col-xs-3 col-lg-3 input-group" style="margin: 0; padding: 0">
                         <asp:TextBox ID="ht" CssClass="form-control" runat="server"></asp:TextBox>
                         <span class="input-group-addon">ft</span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="wt" class="control-label col-xs-3 col-lg-4">Weight : </label>
-                    <div class="col-xs-4 col-lg-3 input-group" style="margin: 0; padding: 0">
+                    <label for="wt" class="control-label col-xs-4 col-lg-4">Weight : </label>
+                    <div class="col-xs-3 col-lg-3 input-group" style="margin: 0; padding: 0">
                         <asp:TextBox ID="wt" CssClass="form-control" runat="server"></asp:TextBox>
                         <span class="input-group-addon">kg</span>
                     </div>
@@ -211,7 +219,7 @@
         <div class="row">
             <div class="col-lg-4 col-lg-offset-3">
                 <div class="form-group">
-                    <label for="symptoms" class="control-label col-xs-3 col-lg-3 ">Symptoms : </label>
+                    <label for="symptoms" class="control-label col-xs-4 col-lg-3 ">Symptoms : </label>
                     <div class="col-xs-7 col-lg-8 " style="margin: 0; padding: 0">
                         <textarea runat="server" class="form-control" placeholder="symptoms" rows="2" id="symptoms" style="height: 85px;"></textarea>
                     </div>
@@ -220,7 +228,7 @@
 
             <div class="col-lg-4 col-lg-offset-3">
                 <div class="form-group">
-                    <label for="diagnosis" class="control-label col-xs-3 col-lg-3 ">Diagnosis : </label>
+                    <label for="diagnosis" class="control-label col-xs-4 col-lg-3 ">Diagnosis : </label>
                     <div class="col-xs-7 col-lg-8 " style="margin: 0; padding: 0">
                         <textarea runat="server" class="form-control" placeholder="diagnosis" rows="2" id="diagnosis" style="height: 85px;"></textarea>
                     </div>
@@ -239,15 +247,15 @@
                             <div class="row">
                                 <div class="col-lg-4 borderMy">
                                     <div class="form-group">
-                                        <label class="control-label col-lg-4" for="medicines">Medicine :</label>
-                                        <div class="col-lg-6" style="margin: 0; padding: 0;">
+                                        <label class="control-label col-lg-4 col-xs-5" for="medicines"><span class="astr">*</span>Medicine :</label>
+                                        <div class="col-lg-6 col-xs-6" style="margin: 0; padding: 0;">
                                             <asp:TextBox ID="medicines" CssClass="form-control" runat="server"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="medicines" ValidationGroup="medicineGroup" ErrorMessage="Please select the medicine." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-4" for="freq">Frequency :</label>
-                                        <div class="col-lg-6" style="margin: 0; padding: 0">
+                                        <label class="control-label col-lg-4 col-xs-5" for="freq"><span class="astr">*</span>Frequency :</label>
+                                        <div class="col-lg-6 " style="margin: 0; padding: 0">
                                             <asp:DropDownList ID="freq" CssClass="dropdown" runat="server">
                                                 <asp:ListItem Value="">Select</asp:ListItem>
                                                 <asp:ListItem>Once a day</asp:ListItem>
@@ -260,8 +268,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-4" for="nday">No of Days :</label>
-                                        <div class="col-lg-3 input-group">
+                                        <label class="control-label col-lg-4 col-xs-5" for="nday"><span class="astr">*</span>No of Days :</label>
+                                        <div class="col-lg-3 col-xs-5 input-group">
                                             <asp:TextBox ID="nday" CssClass="form-control" runat="server"></asp:TextBox>
                                             <span class="input-group-addon">days</span>
                                         </div>
@@ -271,10 +279,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-lg-3 col-lg-offset-2">
+                                        <div class="col-lg-3 col-lg-offset-2 col-xs-4 col-xs-offset-2">
                                             <asp:Button ID="addMedi" runat="server" ValidationGroup="medicineGroup" CssClass="btn btn-info btn-block" Text="Add" OnClick="addMedi_Click" />
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 col-xs-4">
                                             <asp:Button ID="clearMedi" CssClass="btn btn-default btn-block" runat="server" OnClick="clearMedi_Click" Text="Clear" />
                                         </div>
                                     </div>
@@ -308,26 +316,26 @@
                             <div class="row">
                                 <div class="col-lg-5 borderMy">
                                     <div class="form-group">
-                                        <label for="investigation" class="control-label col-xs-3 col-lg-3 ">Investigation : </label>
-                                        <div class="col-xs-7 col-lg-8 " style="margin: 0; padding: 0">
+                                        <label for="investigation" class="control-label col-xs-5 col-lg-3 "><span class="astr">*</span>Investigation : </label>
+                                        <div class="col-xs-6 col-lg-8 " style="margin: 0; padding: 0">
                                             <textarea runat="server" class="form-control" placeholder="investigation" rows="2" id="investigation" style="height: 85px;"></textarea>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ValidationGroup="investigationGroup" runat="server" ControlToValidate="investigation" ErrorMessage="Please enter the investigation." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="result" class="control-label col-xs-3 col-lg-3 ">Result : </label>
-                                        <div class="col-xs-7 col-lg-8 " style="margin: 0; padding: 0">
+                                        <label for="result" class="control-label col-xs-5 col-lg-3 "><span class="astr">*</span>Result : </label>
+                                        <div class="col-xs-6 col-lg-8 " style="margin: 0; padding: 0">
                                             <textarea runat="server" class="form-control" placeholder="result" rows="2" id="result" style="height: 85px;"></textarea>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ValidationGroup="investigationGroup" runat="server" ControlToValidate="result" ErrorMessage="Please enter the result." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-lg-3 col-lg-offset-3">
+                                        <div class="col-lg-3 col-lg-offset-3 col-xs-4 col-xs-offset-2">
                                             <asp:Button ID="addInvestigation" ValidationGroup="investigationGroup" CssClass="btn btn-info btn-block" runat="server" Text="Add" OnClick="addInvestigation_Click" />
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 col-xs-4">
                                             <asp:Button ID="clearInvestigation" CssClass="btn btn-default btn-block" runat="server" Text="Clear" OnClick="clearInvestigation_Click" />
                                         </div>
                                     </div>

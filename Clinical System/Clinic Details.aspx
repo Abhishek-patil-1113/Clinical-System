@@ -4,6 +4,9 @@
     <style>
         .control-label {
             color: forestgreen;
+            padding-top: 9px;
+            margin-left: auto;
+            margin-right: 0;
         }
 
         body {
@@ -12,6 +15,8 @@
 
         .well {
             padding: 5px;
+            padding-left: 25px;
+            padding-right: 25px;
             margin-top: 30px;
             background: #bee5eb;
         }
@@ -33,7 +38,7 @@
                     <div class="form-horizontal">
                         <div class="form-group">
                             <label for="name" class="control-label col-xs-3 "><span class="astr">*</span>Name : </label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="name" CssClass="form-control" placeholder="name" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="name" ValidationGroup="ClinicDetailValidation" ErrorMessage="Please enter the Name." ForeColor="Red"></asp:RequiredFieldValidator>
 
@@ -42,21 +47,21 @@
 
                         <div class="form-group">
                             <label for="address" class="control-label col-xs-3 ">Address : </label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="address" CssClass="form-control" placeholder="address" runat="server"></asp:TextBox>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="area" class="control-label col-xs-3 ">Area : </label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="area" CssClass="form-control" placeholder="area" runat="server"></asp:TextBox>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="city" class="control-label col-xs-3 "><span class="astr">*</span>City :</label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="city" CssClass="form-control" placeholder="city" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="ClinicDetailValidation" ControlToValidate="city" ErrorMessage="Please enter the City." ForeColor="Red"></asp:RequiredFieldValidator>
 
@@ -65,7 +70,7 @@
 
                         <div class="form-group">
                             <label for="pin" class="control-label col-xs-3 ">Pin :</label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="pin" CssClass="form-control" placeholder="pin" runat="server"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="ClinicDetailValidation" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
 
@@ -74,7 +79,7 @@
 
                         <div class="form-group">
                             <label for="contact" class="control-label col-xs-3 "><span class="astr">*</span>Contact :</label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="contact" CssClass="form-control" placeholder="Contact" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" ValidationGroup="ClinicDetailValidation" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="contact" ValidationGroup="ClinicDetailValidation" ErrorMessage="Invalid Mobile." ValidationExpression="^[0-9]{10}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
@@ -83,14 +88,14 @@
 
                         <div class="form-group">
                             <label for="website" class="control-label col-xs-3 ">Website :</label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="website" CssClass="form-control" placeholder="website" runat="server"></asp:TextBox>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="control-label col-xs-3 "><span class="astr">*</span>Email :</label>
-                            <div class="col-xs-7" style="margin: 0; padding: 0">
+                            <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="email" CssClass="form-control" placeholder="email" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RF2" runat="server" ControlToValidate="email" ValidationGroup="ClinicDetailValidation" ErrorMessage="Please enter the Email." ForeColor="Red"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RE2" runat="server" ControlToValidate="email" ValidationGroup="ClinicDetailValidation" ErrorMessage="Invalid Email." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="DarkOrange"></asp:RegularExpressionValidator>

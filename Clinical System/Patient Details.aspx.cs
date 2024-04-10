@@ -75,10 +75,17 @@ public partial class _Default : System.Web.UI.Page
                 SqlCon.Open();
                 cmd = new SqlCommand(maxFind, SqlCon);
                 reader = cmd.ExecuteReader();
-                reader.Read();
-                pid = (Convert.ToInt32(reader[0].ToString())) + 1;
+                if (reader.Read())
+                {
+                    pid = (Convert.ToInt32(reader[0].ToString())) + 1;
+                }
+                else
+                {
+                    pid = 1;
+                }
                 ViewState["AddOnTabs"] = pid;
                 SqlCon.Close();
+
                 string qinsert = $"insert into patient" +
                                   $" values({pid}, '{name.Text}','{padd}', '{parea}', '{city.Text}', '{ppin}', '{pgender}','{pdob}', '{contact.Text}', '{email.Text}', '{pref}','{pbg}', '{dor.Text}')";
                 SqlCon.Open();
@@ -254,8 +261,15 @@ public partial class _Default : System.Web.UI.Page
         SqlCon.Open();
         cmd = new SqlCommand(maxAllergy, SqlCon);
         reader = cmd.ExecuteReader();
-        reader.Read();
-        int aid = (Convert.ToInt32(reader[0].ToString())) + 1;
+        int aid;
+        if (reader.Read())
+        {
+            aid = (Convert.ToInt32(reader[0].ToString())) + 1;
+        }
+        else
+        {
+            aid = 1;
+        }
         SqlCon.Close();
 
         int patientID = Convert.ToInt32(ViewState["AddOnTabs"]);
@@ -280,8 +294,15 @@ public partial class _Default : System.Web.UI.Page
         SqlCon.Open();
         cmd = new SqlCommand(maxCronic, SqlCon);
         reader = cmd.ExecuteReader();
-        reader.Read();
-        int cid = (Convert.ToInt32(reader[0].ToString())) + 1;
+        int cid;
+        if (reader.Read())
+        {
+            cid = (Convert.ToInt32(reader[0].ToString())) + 1;
+        }
+        else
+        {
+            cid = 1;
+        }
         SqlCon.Close();
 
         int patientID = Convert.ToInt32(ViewState["AddOnTabs"]);
@@ -307,8 +328,15 @@ public partial class _Default : System.Web.UI.Page
         SqlCon.Open();
         cmd = new SqlCommand(maxMed, SqlCon);
         reader = cmd.ExecuteReader();
-        reader.Read();
-        int mid = (Convert.ToInt32(reader[0].ToString())) + 1;
+        int mid;
+        if (reader.Read())
+        {
+            mid = (Convert.ToInt32(reader[0].ToString())) + 1;
+        }
+        else
+        {
+            mid = 1;
+        }
         SqlCon.Close();
 
         int patientID = Convert.ToInt32(ViewState["AddOnTabs"]);

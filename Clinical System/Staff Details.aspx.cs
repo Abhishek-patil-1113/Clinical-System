@@ -65,8 +65,15 @@ public partial class _Default : System.Web.UI.Page
                 SqlCon.Open();
                 cmd = new SqlCommand(maxFind, SqlCon);
                 reader = cmd.ExecuteReader();
-                reader.Read();
-                sid = (Convert.ToInt32(reader[0].ToString())) + 1;
+                if (reader.Read())
+                {
+
+                    sid = (Convert.ToInt32(reader[0].ToString())) + 1;
+                }
+                else
+                {
+                    sid = 1;
+                }
                 SqlCon.Close();
 
                 string qinsert = $"insert into staff" +

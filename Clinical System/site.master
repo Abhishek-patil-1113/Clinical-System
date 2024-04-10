@@ -32,6 +32,7 @@
             font-size: 20px;
             text-align: center;
             background-color: #c1e2f5;
+            min-width:300px;
         }
 
         .modelBackground {
@@ -128,7 +129,6 @@
                 <asp:Button ID="lgout" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="logoutonmd_Click" />
             </asp:Panel>
         </asp:Panel>
-
     </form>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

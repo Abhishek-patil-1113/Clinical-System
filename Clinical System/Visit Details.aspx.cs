@@ -263,8 +263,15 @@ public partial class _Default : System.Web.UI.Page
             SqlCon.Open();
             cmd = new SqlCommand(visitMedIDQ, SqlCon);
             reader = cmd.ExecuteReader();
-            reader.Read();
-            int VisitMedID = (Convert.ToInt32(reader[0].ToString())) + 1;
+            int VisitMedID;
+            if (reader.Read())
+            {
+                VisitMedID = (Convert.ToInt32(reader[0].ToString())) + 1;
+            }
+            else
+            {
+                VisitMedID=1;
+            }
             SqlCon.Close();
 
             String medName = medicineTable.Rows[i][0].ToString();
@@ -288,8 +295,15 @@ public partial class _Default : System.Web.UI.Page
             SqlCon.Open();
             cmd = new SqlCommand(visitInveIDQ, SqlCon);
             reader = cmd.ExecuteReader();
-            reader.Read();
-            int VisitInveID = (Convert.ToInt32(reader[0].ToString())) + 1;
+            int VisitInveID;
+            if (reader.Read())
+            {
+                VisitInveID = (Convert.ToInt32(reader[0].ToString())) + 1;
+            }
+            else
+            {
+                VisitInveID = 1;
+            }
             SqlCon.Close();
 
             String inve = inveTable.Rows[i][0].ToString();

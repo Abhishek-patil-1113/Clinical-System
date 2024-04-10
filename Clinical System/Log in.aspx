@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-xs-6 col-xs-offset-4 col-sm-6 col-sm-offset-4 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
+                        <div class="col-xs-8 col-xs-offset-3 col-sm-8 col-sm-offset-3 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
                             <div style="margin: 3px; width: 30%; display: inline-block">
                                 <asp:Button CssClass="btn btn-success btn-block" ID="submit" runat="server" Text="Submit" OnClick="submit_Click1" />
                             </div>

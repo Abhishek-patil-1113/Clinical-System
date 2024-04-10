@@ -119,16 +119,16 @@
                             <div class="col-xs-12 col-sm-11 col-md-6 col-lg-4 col-lg-offset-2">
                                 <div class="well" style= "padding-bottom:45px; padding-right:19px; border-radius:20px;">
                                     <div class="form-group ">
-                                        <label for="sname" class="control-label col-xs-3 col-lg-4 "><span class="astr">*</span>Name : </label>
-                                        <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                                        <label for="sname" class="control-label col-xs-5 col-lg-4 "><span class="astr">*</span>Name : </label>
+                                        <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="sname" CssClass="form-control" runat="server" placeholder="name of staff"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="sname" ErrorMessage="Please enter the Name." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="gender" class="control-label col-xs-3 col-lg-4 "><span class="astr">*</span>Gender:</label>
-                                        <div class="col-xs-9 col-lg-8" style="margin: 0; padding-top: 0;">
+                                        <label for="gender" class="control-label col-xs-5 col-lg-4 "><span class="astr">*</span>Gender:</label>
+                                        <div class="col-xs-7 col-lg-8" style="margin: 0;margin-left:-23px; margin-top:6px; padding-top: 0;">
                                             <asp:RadioButtonList ID="gender" runat="server" RepeatLayout="Flow" CssClass="rbl" CellPadding="1" CellSpacing="1" OnSelectedIndexChanged="gender_SelectedIndexChanged" RepeatDirection="Horizontal">
                                                 <asp:ListItem Value="Male">Male</asp:ListItem>
                                                 <asp:ListItem Value="Female">Female</asp:ListItem>
@@ -138,8 +138,8 @@
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="aadhar" class="control-label col-xs-3 col-lg-4"><span class="astr">*</span>Aadhar : </label>
-                                        <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                                        <label for="aadhar" class="control-label col-xs-5 col-lg-4"><span class="astr">*</span>Aadhar : </label>
+                                        <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="aadhar" CssClass="form-control" placeholder="Aadhar card number" type="text" runat="server"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="aadhar" ErrorMessage="Please enter aadhar number." ForeColor="Red"></asp:RequiredFieldValidator>
                                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="aadhar" ErrorMessage="Invalid Aadhar number." ValidationExpression="^[0-9]{12}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
@@ -147,23 +147,23 @@
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="dob" class="control-label col-xs-3 col-lg-4">Date of Birth :</label>
-                                        <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                                        <label for="dob" class="control-label col-xs-5 col-lg-4">Date of Birth :</label>
+                                        <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="dob" CssClass="form-control" placeholder="select date of birth" runat="server"></asp:TextBox>
                                             <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="dob" runat="server" BehaviorID="_content_CalendarExtender1" />
                                         </div>
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="doj" class="control-label col-xs-3 col-lg-4">Joining Date:</label>
-                                        <div class="col-xs-9 col-lg-8" style="margin: 0; padding: 0">
+                                        <label for="doj" class="control-label col-xs-5 col-lg-4">Joining Date:</label>
+                                        <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="doj" CssClass="form-control" placeholder="select date of joining" runat="server"></asp:TextBox>
                                             <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="doj" runat="server" BehaviorID="_content_CalendarExtender2" />
                                         </div>
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="qualification" class="control-label col-xs-3 col-lg-4">Qualification : </label>
+                                        <label for="qualification" class="control-label col-xs-5 col-lg-4">Qualification : </label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0;">
                                             <asp:DropDownList ID="Qualification" CssClass="dropdown" runat="server" OnSelectedIndexChanged="Qualification_SelectedIndexChanged">
                                                 <asp:ListItem Value="">Select</asp:ListItem>
@@ -185,14 +185,14 @@
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="experience" class="control-label col-xs-3 col-lg-4">Experience :</label>
+                                        <label for="experience" class="control-label col-xs-5 col-lg-4">Experience :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="experience" CssClass="form-control" runat="server" placeholder="experience"></asp:TextBox>
                                         </div>
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="worktype" class="control-label col-xs-3 col-lg-4">Work Type :</label>
+                                        <label for="worktype" class="control-label col-xs-5 col-lg-4">Work Type :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:DropDownList ID="worktype" CssClass="dropdown" runat="server">
                                                 <asp:ListItem Value="">Select</asp:ListItem>
@@ -209,21 +209,21 @@
                             <div class="col-xs-12 col-sm-11 col-md-6 col-lg-4">
                                 <div class="well" style="padding-bottom: 45px; border-radius:20px;">
                                     <div class="form-group">
-                                        <label for="address" class="control-label col-xs-3 col-lg-3 ">Address : </label>
+                                        <label for="address" class="control-label col-xs-4 col-lg-3 ">Address : </label>
                                         <div class="col-xs-7 col-lg-8 " style="margin: 0; padding: 0">
                                             <textarea class="form-control" runat="server" placeholder="address" rows="2" id="address" style="height: 105px;"></textarea>
                                         </div>
                                     </div>
                                     <br />
                                     <div class="form-group" style="margin-top: 86px">
-                                        <label for="area" class="control-label col-xs-3 col-lg-3">Area : </label>
+                                        <label for="area" class="control-label col-xs-4 col-lg-3">Area : </label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="area" CssClass="form-control" runat="server" placeholder="area"></asp:TextBox>
                                         </div>
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="city" class="control-label col-xs-3 col-lg-3"><span class="astr">*</span>City : </label>
+                                        <label for="city" class="control-label col-xs-4 col-lg-3"><span class="astr">*</span>City : </label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="city" CssClass="form-control" runat="server" placeholder="city"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="city" ErrorMessage="Please enter the City." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -232,7 +232,7 @@
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="pin" class="control-label col-xs-3 col-lg-3 ">Pin :</label>
+                                        <label for="pin" class="control-label col-xs-4 col-lg-3 ">Pin :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="pin" CssClass="form-control" placeholder="pin" runat="server"></asp:TextBox>
                                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
@@ -240,7 +240,7 @@
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="contact" class="control-label col-xs-3 col-lg-3 "><span class="astr">*</span>Contact :</label>
+                                        <label for="contact" class="control-label col-xs-4 col-lg-3 "><span class="astr">*</span>Contact :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="contact" runat="server" class=" form-control" placeholder="contact"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" ValidationGroup="staffDetailsValidation" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -249,7 +249,7 @@
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="email" class="control-label col-xs-3 col-lg-3"><span class="astr">*</span>Email :</label>
+                                        <label for="email" class="control-label col-xs-4 col-lg-3"><span class="astr">*</span>Email :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="email" CssClass="form-control" runat="server" placeholder="email"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="email" ValidationGroup="staffDetailsValidation" ErrorMessage="Please enter the Email." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -258,7 +258,7 @@
                                     </div>
                                     <br />
                                     <div class="form-group">
-                                        <label for="password" class="control-label col-xs-3 col-lg-3"><span class="astr">*</span>Password :</label>
+                                        <label for="password" class="control-label col-xs-4 col-lg-3"><span class="astr">*</span>Password :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="password" CssClass="form-control" runat="server" placeholder="password"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="password" ErrorMessage="Please enter the Password." ForeColor="Red"></asp:RequiredFieldValidator>
