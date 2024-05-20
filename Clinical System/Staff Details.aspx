@@ -66,12 +66,12 @@
                                     <Columns>
                                         <asp:TemplateField ShowHeader="False">
                                             <ItemTemplate>
-                                                <asp:LinkButton runat="server" Text="Delete" CommandName="Delete" CssClass="btn btn-sm btn-danger" CausesValidation="False" ID="LinkButton2"></asp:LinkButton>
+                                                <asp:LinkButton runat="server" Text="Delete" CommandName="Delete" ValidationGroup="empty" CssClass="btn btn-sm btn-danger" CausesValidation="False" ID="LinkButton2"></asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField ShowHeader="False">
                                             <ItemTemplate>
-                                                <asp:LinkButton runat="server" Text="Edit" CommandName="Select" CssClass="btn btn-sm btn-secondary" CausesValidation="False" ID="LinkButton1"></asp:LinkButton>
+                                                <asp:LinkButton runat="server" Text="Edit" CommandName="Select" ValidationGroup="empty" CssClass="btn btn-sm btn-secondary" CausesValidation="False" ID="LinkButton1"></asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
@@ -122,7 +122,7 @@
                                         <label for="sname" class="control-label col-xs-5 col-lg-4 "><span class="astr">*</span>Name : </label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="sname" CssClass="form-control" runat="server" placeholder="name of staff"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="sname" ErrorMessage="Please enter the Name." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Display="Dynamic" ValidationGroup="staffDetailsValidation" ControlToValidate="sname" ErrorMessage="Please enter the Name." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <br />
@@ -133,7 +133,7 @@
                                                 <asp:ListItem Value="Male">Male</asp:ListItem>
                                                 <asp:ListItem Value="Female">Female</asp:ListItem>
                                             </asp:RadioButtonList>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="gender" ErrorMessage="Please select the gender." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" Display="Dynamic" ValidationGroup="staffDetailsValidation" ControlToValidate="gender" ErrorMessage="Please select the gender." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <br />
@@ -141,8 +141,8 @@
                                         <label for="aadhar" class="control-label col-xs-5 col-lg-4"><span class="astr">*</span>Aadhar : </label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="aadhar" CssClass="form-control" placeholder="Aadhar card number" type="text" runat="server"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="aadhar" ErrorMessage="Please enter aadhar number." ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="aadhar" ErrorMessage="Invalid Aadhar number." ValidationExpression="^[0-9]{12}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ValidationGroup="staffDetailsValidation" ControlToValidate="aadhar" ErrorMessage="Please enter aadhar number." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" Display="Dynamic" ValidationGroup="staffDetailsValidation" ControlToValidate="aadhar" ErrorMessage="Invalid Aadhar number." ValidationExpression="^[0-9]{12}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
                                         </div>
                                     </div>
                                     <br />
@@ -226,7 +226,7 @@
                                         <label for="city" class="control-label col-xs-4 col-lg-3"><span class="astr">*</span>City : </label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="city" CssClass="form-control" runat="server" placeholder="city"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="city" ErrorMessage="Please enter the City." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic" ValidationGroup="staffDetailsValidation" ControlToValidate="city" ErrorMessage="Please enter the City." ForeColor="Red"></asp:RequiredFieldValidator>
 
                                         </div>
                                     </div>
@@ -235,7 +235,7 @@
                                         <label for="pin" class="control-label col-xs-4 col-lg-3 ">Pin :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="pin" CssClass="form-control" placeholder="pin" runat="server"></asp:TextBox>
-                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Display="Dynamic" ValidationGroup="staffDetailsValidation" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
                                         </div>
                                     </div>
                                     <br />
@@ -243,8 +243,8 @@
                                         <label for="contact" class="control-label col-xs-4 col-lg-3 "><span class="astr">*</span>Contact :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="contact" runat="server" class=" form-control" placeholder="contact"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" ValidationGroup="staffDetailsValidation" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="contact" ValidationGroup="staffDetailsValidation" ErrorMessage="Invalid Mobile." ValidationExpression="^[0-9]{10}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" Display="Dynamic" ValidationGroup="staffDetailsValidation" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="contact" Display="Dynamic" ValidationGroup="staffDetailsValidation" ErrorMessage="Invalid Mobile." ValidationExpression="^[0-9]{10}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
                                         </div>
                                     </div>
                                     <br />
@@ -252,8 +252,8 @@
                                         <label for="email" class="control-label col-xs-4 col-lg-3"><span class="astr">*</span>Email :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="email" CssClass="form-control" runat="server" placeholder="email"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="email" ValidationGroup="staffDetailsValidation" ErrorMessage="Please enter the Email." ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="RE2" runat="server" ControlToValidate="email" ValidationGroup="staffDetailsValidation" ErrorMessage="Invalid Email." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Display="Dynamic" ControlToValidate="email" ValidationGroup="staffDetailsValidation" ErrorMessage="Please enter the Email." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="RE2" runat="server" ControlToValidate="email" Display="Dynamic" ValidationGroup="staffDetailsValidation" ErrorMessage="Invalid Email." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
                                         </div>
                                     </div>
                                     <br />
@@ -261,7 +261,7 @@
                                         <label for="password" class="control-label col-xs-4 col-lg-3"><span class="astr">*</span>Password :</label>
                                         <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                                             <asp:TextBox ID="password" CssClass="form-control" runat="server" placeholder="password"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="staffDetailsValidation" ControlToValidate="password" ErrorMessage="Please enter the Password." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Display="Dynamic" ValidationGroup="staffDetailsValidation" ControlToValidate="password" ErrorMessage="Please enter the Password." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +273,7 @@
                             </div>
 
                             <div class="col-xs-3  col-sm-3 col-md-3 col-lg-1 " style="margin-top: 30px; margin-bottom: 35px; display: inline-block">
-                                <asp:Button ID="clear" runat="server" Text="Clear" class="btn btn-default btn-block" OnClick="clear_Click" />
+                                <asp:Button ID="clear" runat="server" Text="Clear" ValidationGroup="empty" class="btn btn-default btn-block" OnClick="clear_Click" />
                             </div>
                         </div>
                     </form>
@@ -284,7 +284,7 @@
         </ajaxToolkit:TabContainer>
     </div>
 
-    <asp:LinkButton ID="LinkButton2" runat="server"></asp:LinkButton>
+    <asp:LinkButton ID="LinkButton2" ValidationGroup="empty" CausesValidation="false" runat="server"></asp:LinkButton>
     <ajaxToolkit:ModalPopupExtender ID="staffmodal" runat="server" BehaviorID="staffmodal" TargetControlID="LinkButton2" PopupControlID="lgpanel" BackgroundCssClass="modelBackground" CancelControlID="ok">
         <Animations>
         <OnShown>
@@ -297,19 +297,19 @@
     </ajaxToolkit:ModalPopupExtender>
 
     <asp:Panel ID="lgpanel" CssClass="modalpanel" runat="server">
-        <asp:Panel ID="Panel1" CssClass="modal-header" runat="server">
+        <asp:Panel ID="Panel01" CssClass="modal-header" runat="server">
             <h2 style="color: green">Success</h2>
         </asp:Panel>
-        <asp:Panel ID="Panel2" CssClass="modal-body" HorizontalAlign="Left" runat="server">
+        <asp:Panel ID="Panel02" CssClass="modal-body" HorizontalAlign="Left" runat="server">
             <h4>Staff details updated succesfully.</h4>
         </asp:Panel>
-        <asp:Panel ID="Panel3" CssClass="modal-footer" runat="server">
-            <asp:Button ID="ok" CssClass="btn btn-success" runat="server" Text="OK" />
+        <asp:Panel ID="Panel03" CssClass="modal-footer" runat="server">
+            <asp:Button ID="ok" CssClass="btn btn-success" ValidationGroup="empty" runat="server" Text="OK" />
         </asp:Panel>
     </asp:Panel>
 
 
-    <asp:LinkButton ID="LinkButton3" runat="server"></asp:LinkButton>
+    <asp:LinkButton ID="LinkButton3" ValidationGroup="empty" CausesValidation="false" runat="server"></asp:LinkButton>
     <ajaxToolkit:ModalPopupExtender ID="delstaffmodal" runat="server" TargetControlID="LinkButton3" PopupControlID="Panel4" BackgroundCssClass="modelBackground" CancelControlID="btncancel">
         <Animations>
              <OnShown>
@@ -329,8 +329,8 @@
             <h4>Confirm delete ?</h4>
         </asp:Panel>
         <asp:Panel ID="Panel7" CssClass="modal-footer" runat="server">
-            <asp:Button ID="btncancel" CssClass="btn btn-success" runat="server" Text="Cancel" />
-            <asp:Button ID="btndel" CssClass="btn btn-danger" runat="server" Text="Delete" OnClick="btndel_Click" />
+            <asp:Button ID="btncancel" CssClass="btn btn-success" runat="server" ValidationGroup="empty" Text="Cancel" />
+            <asp:Button ID="btndel" CssClass="btn btn-danger" ValidationGroup="empty" runat="server" Text="Delete" OnClick="btndel_Click" />
         </asp:Panel>
     </asp:Panel>
 

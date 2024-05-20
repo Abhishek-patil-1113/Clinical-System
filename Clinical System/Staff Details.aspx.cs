@@ -27,12 +27,19 @@ public partial class _Default : System.Web.UI.Page
 
     public void loadTable()
     {
-        q = $"select staff_id, staff_name, staff_city, staff_gender, staff_contact from staff";
-        SqlCon.Open();
         DataSet tb = new DataSet();
-        adapter = new SqlDataAdapter(q, SqlCon);
-        adapter.Fill(tb, "staff");
-        SqlCon.Close();
+        try
+        {
+            q = $"select staff_id, staff_name, staff_city, staff_gender, staff_contact from staff";
+            SqlCon.Open();
+            adapter = new SqlDataAdapter(q, SqlCon);
+            adapter.Fill(tb, "staff");
+        }
+        catch { }
+        finally
+        {
+            SqlCon.Close();
+        }
         GridView1.DataSource = tb;
         GridView1.DataBind();
     }
@@ -98,7 +105,9 @@ public partial class _Default : System.Web.UI.Page
                 GridView1.SelectedIndex = -1;
                 staffmodal.Show();
             }
-            catch (Exception ex) {Response.Write(ex.ToString());
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
             }
             finally { SqlCon.Close(); }
         }
@@ -197,62 +206,68 @@ public partial class _Default : System.Web.UI.Page
         ViewState["pkUpdate"] = pk;
 
         string maxFind = $"select staff_id, staff_name, staff_addrs, staff_area, staff_city, staff_pin, staff_contact, staff_gender, staff_aadhar, staff_email, staff_dob, staff_doj, staff_qualification, staff_experience, staff_work_type, password from staff where staff_id = {pk}";
-        SqlCon.Open();
-        cmd = new SqlCommand(maxFind, SqlCon);
-        reader = cmd.ExecuteReader();
-        reader.Read();
-
-        sname.Text = reader[1].ToString();
-        address.Value = reader[2].ToString();
-        area.Text = reader[3].ToString();
-        city.Text = reader[4].ToString();
-        pin.Text = reader[5].ToString();
-        contact.Text = reader[6].ToString();
-
-        foreach (ListItem listItem in gender.Items)
+        try
         {
-            if (listItem.Value == reader[7].ToString())
+            SqlCon.Open();
+            cmd = new SqlCommand(maxFind, SqlCon);
+            reader = cmd.ExecuteReader();
+            reader.Read();
+
+            sname.Text = reader[1].ToString();
+            address.Value = reader[2].ToString();
+            area.Text = reader[3].ToString();
+            city.Text = reader[4].ToString();
+            pin.Text = reader[5].ToString();
+            contact.Text = reader[6].ToString();
+
+            foreach (ListItem listItem in gender.Items)
             {
-                listItem.Selected = true;
-                break;
+                if (listItem.Value == reader[7].ToString())
+                {
+                    listItem.Selected = true;
+                    break;
+                }
             }
-        }
 
-        aadhar.Text = reader[8].ToString();
-        email.Text = reader[9].ToString();
+            aadhar.Text = reader[8].ToString();
+            email.Text = reader[9].ToString();
 
-        DateTime dt = Convert.ToDateTime(reader[10]);
-        dob.Text = dt.ToString("yyyy-MM-dd");
+            DateTime dt = Convert.ToDateTime(reader[10]);
+            dob.Text = dt.ToString("yyyy-MM-dd");
 
-        DateTime dt1 = Convert.ToDateTime(reader[11]);
-        doj.Text = dt1.ToString("yyyy-MM-dd");
-        Qualification.SelectedIndex = -1;
-        foreach (ListItem listItem in Qualification.Items)
-        {
-            if (listItem.Value == reader[12].ToString())
+            DateTime dt1 = Convert.ToDateTime(reader[11]);
+            doj.Text = dt1.ToString("yyyy-MM-dd");
+            Qualification.SelectedIndex = -1;
+            foreach (ListItem listItem in Qualification.Items)
             {
-                listItem.Selected = true;
-                break;
+                if (listItem.Value == reader[12].ToString())
+                {
+                    listItem.Selected = true;
+                    break;
+                }
             }
-        }
-        experience.Text = reader[13].ToString();
+            experience.Text = reader[13].ToString();
 
-        worktype.SelectedIndex = -1;
-        foreach (ListItem listItem in worktype.Items)
-        {
-            if (listItem.Value == reader[14].ToString())
+            worktype.SelectedIndex = -1;
+            foreach (ListItem listItem in worktype.Items)
             {
-                listItem.Selected = true;
-                break;
+                if (listItem.Value == reader[14].ToString())
+                {
+                    listItem.Selected = true;
+                    break;
+                }
             }
+            password.Text = reader[15].ToString();
         }
-        password.Text = reader[15].ToString();
+        catch { }
+        finally { SqlCon.Close(); }
+
         stafftab.ActiveTabIndex = 1;
     }
 
     protected void btndel_Click(object sender, EventArgs e)
     {
-        deleteRow();   
+        deleteRow();
     }
 
     protected void clear_Click(object sender, EventArgs e)

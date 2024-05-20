@@ -29,40 +29,47 @@ public partial class _Default : System.Web.UI.Page
 
     public void checkFlag()
     {
-        q = "select clinic_name, clinic_addrs, clinic_area, clinic_city, clinic_pin, clinic_contact, clinic_website, clinic_email, cast (start_time as time(0)) as start_time, cast (end_time as time(0)) as end_time from clinic_detail where clinic_id=1";
-        SqlCon.Open();
-        cmd = new SqlCommand(q, SqlCon);
-        reader = cmd.ExecuteReader();
-        if (reader.Read())
+        try
         {
-            flag = true;
+            q = "select clinic_name, clinic_addrs, clinic_area, clinic_city, clinic_pin, clinic_contact, clinic_website, clinic_email, cast (start_time as time(0)) as start_time, cast (end_time as time(0)) as end_time from clinic_detail where clinic_id=1";
+            SqlCon.Open();
+            cmd = new SqlCommand(q, SqlCon);
+            reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                flag = true;
+            }
+            else { flag = false; }
         }
-        else { flag = false; }
-
-        SqlCon.Close();
+        catch{ }
+        finally { SqlCon.Close(); }
     }
 
     public void fillForm()
     {
-        SqlCon.Open();
-        q = "select clinic_name, clinic_addrs, clinic_area, clinic_city, clinic_pin, clinic_contact, clinic_website, clinic_email, cast (start_time as time(0)) as start_time, cast (end_time as time(0)) as end_time from clinic_detail where clinic_id=1";
-        cmd = new SqlCommand(q, SqlCon);
-        reader = cmd.ExecuteReader();
-
-        if (reader.Read())
+        try
         {
-            name.Text = reader["clinic_name"].ToString();
-            address.Text = reader["clinic_addrs"].ToString();
-            area.Text = reader["clinic_area"].ToString();
-            city.Text = reader["clinic_city"].ToString();
-            pin.Text = reader["clinic_pin"].ToString();
-            contact.Text = reader["clinic_contact"].ToString();
-            website.Text = reader["clinic_website"].ToString();
-            email.Text = reader["clinic_email"].ToString();
-            starttime.Value = reader["start_time"].ToString();
-            endtime.Value = reader["end_time"].ToString();
+            q = "select clinic_name, clinic_addrs, clinic_area, clinic_city, clinic_pin, clinic_contact, clinic_website, clinic_email, cast (start_time as time(0)) as start_time, cast (end_time as time(0)) as end_time from clinic_detail where clinic_id=1";
+            SqlCon.Open();
+            cmd = new SqlCommand(q, SqlCon);
+            reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                name.Text = reader["clinic_name"].ToString();
+                address.Text = reader["clinic_addrs"].ToString();
+                area.Text = reader["clinic_area"].ToString();
+                city.Text = reader["clinic_city"].ToString();
+                pin.Text = reader["clinic_pin"].ToString();
+                contact.Text = reader["clinic_contact"].ToString();
+                website.Text = reader["clinic_website"].ToString();
+                email.Text = reader["clinic_email"].ToString();
+                starttime.Value = reader["start_time"].ToString();
+                endtime.Value = reader["end_time"].ToString();
+            }
         }
-        SqlCon.Close();
+        catch { }
+        finally { SqlCon.Close(); }
     }
 
     protected void save_Click(object sender, EventArgs e)
@@ -75,6 +82,10 @@ public partial class _Default : System.Web.UI.Page
         cpin = pin.Text;
         string cweb = "";
         cweb = website.Text;
+
+        string strr = starttime.Value;
+        string strr2 = endtime.Value;
+
 
         if (flag)
         {

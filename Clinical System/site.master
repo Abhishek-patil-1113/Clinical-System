@@ -41,6 +41,12 @@
         }
 
     </style>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -69,7 +75,7 @@
                         <a class="dropdown-toggle text-light" data-toggle="dropdown">Transaction</a>
                         <ul class="dropdown-menu">
                             <li><a href="visit details.aspx" class="dropdown-item">Visit Details</a></li>
-                            <li><a href="#" class="dropdown-item">Appointment Details</a></li>
+                            <li><a href="ApoointmentStaff.aspx" class="dropdown-item">Appointment Details</a></li>
                         </ul>
                     </div>
 
@@ -125,16 +131,11 @@
                 <h4>Confirm Log out ?</h4>
             </asp:Panel>
             <asp:Panel ID="Panel3" CssClass="modal-footer" runat="server">
-                <asp:Button ID="cancel" CssClass="btn btn-success" runat="server" Text="Cancel" />
-                <asp:Button ID="lgout" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="logoutonmd_Click" />
+                <asp:Button ID="cancel" CssClass="btn btn-success" ValidationGroup="empty1" runat="server" Text="Cancel" />
+                <asp:Button ID="lgout" CssClass="btn btn-danger" ValidationGroup="empty1" CausesValidation="false" runat="server" Text="Log Out" OnClick="logoutonmd_Click" />
             </asp:Panel>
         </asp:Panel>
     </form>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
 </html>

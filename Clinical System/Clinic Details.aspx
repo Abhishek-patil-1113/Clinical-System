@@ -24,6 +24,8 @@
         .astr {
             color: red;
         }
+
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -40,7 +42,7 @@
                             <label for="name" class="control-label col-xs-3 "><span class="astr">*</span>Name : </label>
                             <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="name" CssClass="form-control" placeholder="name" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="name" ValidationGroup="ClinicDetailValidation" ErrorMessage="Please enter the Name." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="name" ValidationGroup="ClinicDetailValidation" Display="Dynamic" ErrorMessage="Please enter the Name." ForeColor="Red"></asp:RequiredFieldValidator>
 
                             </div>
                         </div>
@@ -63,7 +65,7 @@
                             <label for="city" class="control-label col-xs-3 "><span class="astr">*</span>City :</label>
                             <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="city" CssClass="form-control" placeholder="city" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="ClinicDetailValidation" ControlToValidate="city" ErrorMessage="Please enter the City." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="ClinicDetailValidation" ControlToValidate="city" Display="Dynamic" ErrorMessage="Please enter the City." ForeColor="Red"></asp:RequiredFieldValidator>
 
                             </div>
                         </div>
@@ -72,7 +74,7 @@
                             <label for="pin" class="control-label col-xs-3 ">Pin :</label>
                             <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="pin" CssClass="form-control" placeholder="pin" runat="server"></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="ClinicDetailValidation" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="ClinicDetailValidation" Display="Dynamic" ControlToValidate="pin" ErrorMessage="Invalid Pin." ValidationExpression="^[0-9]{6}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
 
                             </div>
                         </div>
@@ -81,8 +83,8 @@
                             <label for="contact" class="control-label col-xs-3 "><span class="astr">*</span>Contact :</label>
                             <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="contact" CssClass="form-control" placeholder="Contact" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" ValidationGroup="ClinicDetailValidation" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="contact" ValidationGroup="ClinicDetailValidation" ErrorMessage="Invalid Mobile." ValidationExpression="^[0-9]{10}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RF3" runat="server" ControlToValidate="contact" ValidationGroup="ClinicDetailValidation" Display="Dynamic" ErrorMessage="Please enter the Mobile." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="contact" ValidationGroup="ClinicDetailValidation" Display="Dynamic" ErrorMessage="Invalid Mobile." ValidationExpression="^[0-9]{10}" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
                             </div>
                         </div>
 
@@ -97,16 +99,15 @@
                             <label for="email" class="control-label col-xs-3 "><span class="astr">*</span>Email :</label>
                             <div class="col-xs-8" style="margin: 0; padding: 0">
                                 <asp:TextBox ID="email" CssClass="form-control" placeholder="email" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RF2" runat="server" ControlToValidate="email" ValidationGroup="ClinicDetailValidation" ErrorMessage="Please enter the Email." ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RE2" runat="server" ControlToValidate="email" ValidationGroup="ClinicDetailValidation" ErrorMessage="Invalid Email." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
-
+                                <asp:RequiredFieldValidator ID="RF2" runat="server" ControlToValidate="email" ValidationGroup="ClinicDetailValidation" Display="Dynamic" ErrorMessage="Please enter the Email." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RE2" runat="server" ControlToValidate="email" ValidationGroup="ClinicDetailValidation" Display="Dynamic" ErrorMessage="Invalid Email." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="starttime" class="control-label col-xs-5 col-sm-5 col-md-3"><span class="astr">*</span>Start Time :</label>
                             <div class="col-xs-7" style="margin: 0; padding: 0">
-                                <input runat="server" type="time" id="starttime" required="required" />
+                                <input runat="server" type="time" id="starttime" required="required" pattern="[0-9]{2}:[0-9]{2}" />
                             </div>
                         </div>
 
@@ -122,7 +123,7 @@
                                 <asp:Button ID="save" runat="server" Text="Save" ValidationGroup="ClinicDetailValidation" class="btn btn-success btn-block" type="submit" OnClick="save_Click" />
                             </div>
                             <div class="col-xs-3 col-sm-4 col-md-3 col-lg-3 " style="margin-top: 15px; display: inline-block">
-                                <asp:Button ID="clear" runat="server" Text="Clear" class="btn btn-default btn-block" OnClick="clear_Click" />
+                                <asp:Button ID="clear" runat="server" Text="Clear" ValidationGroup="empty" class="btn btn-default btn-block" OnClick="clear_Click" />
                             </div>
                         </div>
                     </div>
@@ -131,7 +132,7 @@
         </div>
     </div>
 
-    <asp:LinkButton ID="LinkButton2" runat="server"></asp:LinkButton>
+    <asp:LinkButton ID="LinkButton2" ValidationGroup="empty" runat="server"></asp:LinkButton>
     <ajaxToolkit:ModalPopupExtender ID="clinicDt" runat="server" BehaviorID="clinicDt" TargetControlID="LinkButton2" PopupControlID="lgpanel" BackgroundCssClass="modelBackground" CancelControlID="ok">
         <Animations>
         <OnShown>
@@ -151,7 +152,7 @@
             <h4>Clinic details updated succesfully.</h4>
         </asp:Panel>
         <asp:Panel ID="Panel3" CssClass="modal-footer" runat="server">
-            <asp:Button ID="ok" CssClass="btn btn-success" runat="server" Text="OK" />
+            <asp:Button ID="ok" CssClass="btn btn-success" ValidationGroup="empty" runat="server" Text="OK" />
         </asp:Panel>
     </asp:Panel>
 

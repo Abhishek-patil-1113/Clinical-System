@@ -196,8 +196,16 @@ public partial class _Default : System.Web.UI.Page
             }
         }
         //dob.Text = reader[7].ToString();
-        DateTime dt = Convert.ToDateTime(reader[7]);
-        dob.Text = dt.ToString("yyyy-MM-dd");
+        DateTime dt = new DateTime();
+        if (reader[7].ToString() == "")
+        {
+
+        }
+        else
+        {
+            dt = Convert.ToDateTime(reader[7]);
+            dob.Text = dt.ToString("yyyy-MM-dd");
+        }
         contact.Text = reader[8].ToString();
         email.Text = reader[9].ToString();
         reference.Text = reader[10].ToString();
@@ -212,8 +220,17 @@ public partial class _Default : System.Web.UI.Page
             }
         }
         //dor.Text = reader[12].ToString();
-        DateTime dt1 = Convert.ToDateTime(reader[12]);
-        dor.Text = dt.ToString("yyyy-MM-dd");
+        DateTime dt1 = new DateTime();
+        if (reader[12].ToString() == "")
+        {
+            dt1 = DateTime.Now;
+        }
+        else
+        {
+            dt1 = Convert.ToDateTime(reader[12]);
+        }
+        //DateTime dt1 = Convert.ToDateTime(reader[12]);
+        dor.Text = dt1.ToString("yyyy-MM-dd");
 
         patienttab.ActiveTabIndex = 1;
     }
@@ -690,6 +707,12 @@ public partial class _Default : System.Web.UI.Page
         string deleteHistory = $"delete from medication_history where patient_id = {patientid}";
         SqlCon.Open();
         cmd = new SqlCommand(deleteHistory, SqlCon);
+        cmd.ExecuteNonQuery();
+        SqlCon.Close();
+
+        string deleteAppointments = $"delete from appt where patient_id = {patientid}";
+        SqlCon.Open();
+        cmd = new SqlCommand(deleteAppointments, SqlCon);
         cmd.ExecuteNonQuery();
         SqlCon.Close();
 

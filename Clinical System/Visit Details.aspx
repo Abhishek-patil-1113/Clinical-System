@@ -78,7 +78,7 @@
                         <asp:DropDownList ID="rnodrop" CssClass="dropdown" runat="server" Visible="false" AutoPostBack="True" OnSelectedIndexChanged="rnodrop_SelectedIndexChanged" OnDataBound="rnodrop_DataBound">
                         </asp:DropDownList>
                         <asp:Label ID="errorStrip" runat="server" ForeColor="Red" ValidationGroup="visitDetailsGroup" Text=""></asp:Label>
-                        <asp:RegularExpressionValidator ID="RE3" runat="server" ControlToValidate="rno" ValidationGroup="visitDetailsGroup" ErrorMessage="Invalid Registration Number." ValidationExpression="^[0-9]*$" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RE3" runat="server" Display="Dynamic" ControlToValidate="rno" ValidationGroup="visitDetailsGroup" ErrorMessage="Invalid Registration Number." ValidationExpression="^[0-9]*$" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
 
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     <label for="pname" class="control-label col-xs-4 col-lg-4"><span class="astr">*</span>Patient Name : </label>
                     <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:TextBox ID="pname" CssClass="form-control" placeholder="patient name" runat="server" OnDataBinding="pname_DataBinding" OnTextChanged="pname_TextChanged" AutoPostBack="True"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" ValidationGroup="visitDetailsGroup" runat="server" ControlToValidate="pname" ErrorMessage="Please enter the name." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" Display="Dynamic" ValidationGroup="visitDetailsGroup" runat="server" ControlToValidate="pname" ErrorMessage="Please enter the name." ForeColor="Red"></asp:RequiredFieldValidator>
 
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     <div class="col-xs-7 col-lg-8" style="margin: 0; padding: 0">
                         <asp:TextBox ID="vdatetxt" CssClass="form-control" placeholder="enter visit date" runat="server"></asp:TextBox>
                         <ajaxToolkit:CalendarExtender ID="vdate" TargetControlID="vdatetxt" runat="server" Enabled="True" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="visitDetailsGroup" ControlToValidate="vdatetxt" ErrorMessage="Please select the date." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" Display="Dynamic" runat="server" ValidationGroup="visitDetailsGroup" ControlToValidate="vdatetxt" ErrorMessage="Please select the date." ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -132,7 +132,7 @@
                             <asp:ListItem>With Appointment</asp:ListItem>
                             <asp:ListItem>Without Appointment</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="visitDetailsGroup" ControlToValidate="vtype" ErrorMessage="Please select the visit type." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Display="Dynamic" runat="server" ValidationGroup="visitDetailsGroup" ControlToValidate="vtype" ErrorMessage="Please select the visit type." ForeColor="Red"></asp:RequiredFieldValidator>
 
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                         <asp:DropDownList ID="dname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="true">
                             <asp:ListItem Value="">Select</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ValidationGroup="visitDetailsGroup" runat="server" ControlToValidate="dname" ErrorMessage="Please select the doctor name." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" Display="Dynamic" ValidationGroup="visitDetailsGroup" runat="server" ControlToValidate="dname" ErrorMessage="Please select the doctor name." ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -153,7 +153,7 @@
                         <asp:DropDownList ID="stname" CssClass="dropdown" runat="server" DataTextField="staff_name" DataValueField="staff_id" EnableViewState="true">
                             <asp:ListItem Value="">Select</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="visitDetailsGroup" ControlToValidate="stname" ErrorMessage="Please select the staff name." ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" Display="Dynamic" ValidationGroup="visitDetailsGroup" ControlToValidate="stname" ErrorMessage="Please select the staff name." ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
             </div>
@@ -250,7 +250,7 @@
                                         <label class="control-label col-lg-4 col-xs-5" for="medicines"><span class="astr">*</span>Medicine :</label>
                                         <div class="col-lg-6 col-xs-6" style="margin: 0; padding: 0;">
                                             <asp:TextBox ID="medicines" CssClass="form-control" runat="server"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="medicines" ValidationGroup="medicineGroup" ErrorMessage="Please select the medicine." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Display="Dynamic" runat="server" ControlToValidate="medicines" ValidationGroup="medicineGroup" ErrorMessage="Please select the medicine." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -264,7 +264,7 @@
                                                 <asp:ListItem>Early morning</asp:ListItem>
                                                 <asp:ListItem>Before meal</asp:ListItem>
                                             </asp:DropDownList>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="medicineGroup" ControlToValidate="freq" ErrorMessage="Please select the frequency." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic" ValidationGroup="medicineGroup" ControlToValidate="freq" ErrorMessage="Please select the frequency." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -275,7 +275,7 @@
                                         </div>
                                         <div class="input-group col-lg-offset-4">
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="medicineGroup" ControlToValidate="nday" ErrorMessage="Please enter the number." ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="RE2" runat="server" ValidationGroup="medicineGroup" ControlToValidate="nday" ErrorMessage="Enter the number of days." ValidationExpression="^[0-9]*$" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+                                            <asp:RegularExpressionValidator ID="RE2" runat="server" Display="Dynamic" ValidationGroup="medicineGroup" ControlToValidate="nday" ErrorMessage="Enter the number of days." ValidationExpression="^[0-9]*$" ForeColor="DarkOrange"></asp:RegularExpressionValidator>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -319,7 +319,7 @@
                                         <label for="investigation" class="control-label col-xs-5 col-lg-3 "><span class="astr">*</span>Investigation : </label>
                                         <div class="col-xs-6 col-lg-8 " style="margin: 0; padding: 0">
                                             <textarea runat="server" class="form-control" placeholder="investigation" rows="2" id="investigation" style="height: 85px;"></textarea>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ValidationGroup="investigationGroup" runat="server" ControlToValidate="investigation" ErrorMessage="Please enter the investigation." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" Display="Dynamic" ValidationGroup="investigationGroup" runat="server" ControlToValidate="investigation" ErrorMessage="Please enter the investigation." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
 
@@ -327,7 +327,7 @@
                                         <label for="result" class="control-label col-xs-5 col-lg-3 "><span class="astr">*</span>Result : </label>
                                         <div class="col-xs-6 col-lg-8 " style="margin: 0; padding: 0">
                                             <textarea runat="server" class="form-control" placeholder="result" rows="2" id="result" style="height: 85px;"></textarea>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ValidationGroup="investigationGroup" runat="server" ControlToValidate="result" ErrorMessage="Please enter the result." ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" Display="Dynamic" ValidationGroup="investigationGroup" runat="server" ControlToValidate="result" ErrorMessage="Please enter the result." ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
 

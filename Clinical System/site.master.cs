@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 public partial class site : System.Web.UI.MasterPage
 {
@@ -14,6 +15,8 @@ public partial class site : System.Web.UI.MasterPage
 
     protected void logoutonmd_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Log in.aspx");
+        FormsAuthentication.SignOut();
+        Session.Abandon();
+        FormsAuthentication.RedirectToLoginPage();
     }
 }

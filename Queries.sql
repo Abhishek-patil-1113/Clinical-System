@@ -1,6 +1,8 @@
 --select clinic_name, clinic_addrs, clinic_area, clinic_city, clinic_pin, clinic_contact, clinic_website, clinic_email, cast (start_time as time(0)) as start_time, cast (end_time as time(0)) as end_time from clinic_detail where clinic_id=1
 --select * from clinic_detail
 
+--select  cast (start_time as time(0)) as start_time, cast (end_time as time(0)) as end_time from clinic_detail where clinic_id=1
+
 --select * from staff
 
 --select staff_id, staff_name, staff_addrs, staff_area, staff_city, staff_pin, staff_contact, staff_gender, staff_aadhar, staff_email, staff_dob, staff_doj, staff_qualification, staff_experience, staff_work_type, password from staff        
@@ -53,8 +55,12 @@
 
 --update staff set staff_name = 'updated', staff_addrs = 'updated address', staff_area ='', staff_city = '', staff_pin = 141414, staff_contact = 7070707070, staff_gender = 'Male', staff_aadhar = 606060606060, staff_email = '', staff_dob = '', staff_doj = '', staff_qualification = '', staff_experience = '', staff_work_type = '', password = '' where staff_id = 4
 
---select * from patient
+--select patient_id from patient 
 
+
+select * from patient
+--insert into patient (patient_id, patient_name) values (24,'{TxtRegNoNew.Text})'
+--insert into patient (patient_id, patient_name) values (23, 'aaaa')
 --select patient_id, patient_name,patient_city,patient_gender,patient_contact,reg_dt from patient
 
 --delete from patient where patient_id = 18
@@ -76,19 +82,20 @@
 
 --insert into medication values (1, 1, 'medicine1', 'once a day', 30)
 
-
+--delete from appt where appt_no=35
 --select * from investigation
 
 --insert into investigation values (1, 1, 'aa', 'vv')
 
 --select staff_id, staff_name from staff 
 
+--select cast(time_slot as time(0)) as time_slot , appt_date from appt
 
 --select * from staff
 
-select * from allergy_history
-select * from cronic_disease
-select * from medication_history
+--select * from allergy_history
+--select * from cronic_disease
+--select * from medication_history
 
 --delete from allergy_history where allergy_id= 5
 
@@ -118,6 +125,41 @@ select * from medication_history
 
  --select patient_id,patient_name,patient_addrs,patient_area,patient_city,patient_pin,patient_gender, patient_dob, patient_contact , patient_email, patient_ref, patient_blood_group, reg_dt from patient where patient_id = 1
 
+--select * from appt
+
+--delete from appt where patient_id = 50
+--select * from patient
+
+--SELECT cast(time_slot as time(0)) as time_slot, RTRIM(REPLACE(appt_date, ' 00:00:00', '')) AS appt_date, patient_id FROM appt
+
+--select patient_name from patient where patient_id = 
+
+--select cast(time_slot as time(0)) as time_slot , appt_date from appt
+
+--select time_slot , appt_date from appt
+
+--SELECT time_slot
+--FROM appt;
+
+
+----SELECT cast(time_slot as time(0)) as time_slot, RTRIM(REPLACE(appt_date, ' 00:00:00', '')) AS appt_date FROM appt;
+
+--SELECT FORMAT(time_slot, 'HH:mm:ss') AS time_slot
+--FROM appt;
+
+
+ --RTRIM(REPLACE('10:00:0025-04-2024 00:00:00', '000000', '')) AS trimmed_date
+
+--insert into appt values ({aid}, 0 , '{timeArr[0]}', '{timeArr[1]}', '', {pid},{doc})
+--insert into appt values ({aid}, 0 , 'Regular', '{timeArr[0]}', '{timeArr[1]}',{pid},{doc})
+
+--insert into appt values (4, 0 , 'a', '11:15', '04-25-2024', 1,1)
+
+--select * from staff
+
+--select staff_id, staff_name from staff where staff_work_type = 'Doctor'
+
+ --insert into appt values (1, 1, '', '11:15', '05/14/2024', 1,1)
 
 -- patient_id	int	Unchecked
 --patient_name	varchar(40)	Checked
@@ -133,3 +175,5 @@ select * from medication_history
 --patient_blood_group	varchar(5)	Checked
 --reg_dt	date	Checked
 --		Unchecked
+
+--create table Appointment_Table 

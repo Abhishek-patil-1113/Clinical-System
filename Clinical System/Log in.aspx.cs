@@ -4,29 +4,26 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Web.Security;
 public partial class Log_in : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
-
-    public void submit_Click (object sender, EventArgs e)
+    [Obsolete]
+    protected void submit_Click(object sender, EventArgs e)
     {
-        
-
-        //TextBox t1 = this.FindControl("inputusername");
-
-
+        if (FormsAuthentication.Authenticate(username.Value, password.Value))
+        {
+            FormsAuthentication.RedirectFromLoginPage(username.Value, remember_me.Checked);
+            
+        }
+        else { error.Text = "Invalid Username or Password."; }
     }
 
-    protected void submit_Click1(object sender, EventArgs e)
+    protected void lnkbtnHome_Click(object sender, EventArgs e)
     {
-        if (inputusername.Value == "admin" && inputuserpassword.Value == "admin")
-        {
-            Response.Redirect("Dashboard.aspx");
-        }
-        else { error.Text = "Invalid username or password."; }
+        Response.Redirect("appoitmentHome.aspx");
     }
 }
